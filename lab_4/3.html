@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Map</title>
+    <script>
+        function clicker(){
+            window.open("pic.html");
+        }
 
-    <title>3rd</title>
+        function text(){
+            document.getElementById('textbox').innerHTML='mountains';
+        }
+
+        function remove(){
+            document.getElementById('textbox').innerHTML='';
+        }
+    </script>
 </head>
 <body>
-    <a href="img_mountains.jpg" target="_blank" ><img src="img_mountains.jpg" width="300" height="300"  onmouseover="document.getElementById('popup').style.display = 'block';" onmouseout="document.getElementById('popup').style.display = 'none';"        /></a>
-    <div id="popup" style="display:none;">Mountains
-    </div>
+    <img src="img_mountains.jpg" usemap="#moun">
+
+    <map name="moun">
+        <area shape="rect" coords="0,1,598,398" onclick="clicker()" onmouseover="text()" onmouseout="remove()">      
+</map>
+
+<h2 id="textbox"></h2>
 
 </body>
-
 </html>
