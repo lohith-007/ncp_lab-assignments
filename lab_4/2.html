@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>js events</title>
+	</head>
+	<body>
+		<script language="javascript" type="text/javascript">
+			function OnImg()
+			{
+				document.body.style.background="#30A860"
+
+			}
+
+			function OutImg()
+			{
+				document.body.style.background="#A8FFA8"
+
+			}
+
+			function redirect()
+			{
+				location.replace("https://intranet.cb.amrita.edu")
+
+			}	
+		</script>
+		<img id="img1" onmouseover="OnImg()" onmouseout="OutImg()" onclick="redirect()" src="img_mountains.jpg" width="400" height="400" >
+	</body>
+</html>
