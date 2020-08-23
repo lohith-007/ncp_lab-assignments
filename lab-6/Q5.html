@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random</title>
+</head>
+
+
+
+<body>
+    <img src="" id="image" style="height: 300px; width: auto;">
+    <h3 id="desc"></h3>
+
+    <button id="gen" onclick="thefunc()">Allot roles</button>
+    <table border="1px" style="border-style: dotted;">
+        <tr>
+            <td>tony</td>
+            <td id="1">0</td>
+        </tr>
+        <tr>
+            <td>Odinson</td>
+            <td id="2">0</td>
+        </tr>
+        <tr>
+            <td>rogers</td>
+            <td id="3">0</td>
+        </tr>
+        <tr>
+            <td>Dr.Strange</td>
+            <td id="4">0</td>
+        </tr>
+
+
+        
+        
+        
+        
+    </table>
+
+    <script>
+        var n = {"1": 0,"2": 0,"3": 0,"4": 0,"5": 0,}
+
+        var texts = ["tony","odinson","steven rogers","Strange"]
+
+        var images = [
+            "https://wallpapercave.com/wp/UIxerQM.jpg",
+            "https://wallpapercave.com/wp/wp4360615.jpg",
+            "https://images.hdqwalls.com/download/captain-america-shield-with-hammer-v9-2048x2048.jpg",
+            "http://statcdn.fandango.com/MPX/image/NBCU_Fandango/69/998/DoctorStrange_clip_sanctumbattle.jpg"
+            ]
+
+
+        function thefunc()
+        {
+            for(var i=0;i<=10;i++)
+            {
+                setTimeout(function () {
+                    var rand = Math.floor(Math.random() * 5)
+                    if (document.getElementById(String(rand + 1)).innerText == "0") {
+                        document.getElementById(String(rand + 1)).innerText = "1"
+                        n[String(rand + 1)] = 1
+                    } else {
+                        document.getElementById(String(rand + 1)).innerText = String(parseInt(document.getElementById(String(rand + 1)).innerText) + 1)
+                        n[String(rand + 1)] = parseInt(document.getElementById(String(rand + 1)).innerText) + 1
+                    }
+                    document.getElementById('desc').innerText = texts[rand]
+                    document.getElementById("image").src = images[rand]
+                }, 2000 * i); 
+                
+                
+            }
+            
+        }
+    </script>
+</body>
+
+</html>
